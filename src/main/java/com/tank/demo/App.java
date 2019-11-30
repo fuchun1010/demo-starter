@@ -12,13 +12,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class App {
   public static void main(String[] args) {
     ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
-    for (String name : context.getBeanDefinitionNames()) {
-      if (name.indexOf("com.tank.util") != -1) {
-        System.out.println(name);
-      }
-
-    }
-//    System.out.println("--->" + context.containsBean("person"));
-//    System.out.println("--->" + context.containsBean("jsonService"));
+    System.out.println("--->" + context.containsBean("person"));
+    System.out.println("--->" + context.containsBean("jsonService"));
+    System.out.println("--->" + context.containsBean("redisService"));
+    System.out.println("--->" + context.containsBean("redisTemplate"));
   }
 }
